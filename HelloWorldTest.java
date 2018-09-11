@@ -11,7 +11,7 @@ public class HelloWorldTest {
 	// Asserts that HelloWorld class main method outputs "Hello, world!"
 	// adapted from http://gilmation.com/articles/junit-with-standard-and-error-output-in-main-methods/
 	@Test
-	public void testHelloWorldOutput(String[] args) throws Throwable {
+	public void testHelloWorldOutput() throws Throwable {
 		PrintStream OUT = System.out;
 		PrintStream ERR = System.err;
 		
@@ -32,7 +32,7 @@ public class HelloWorldTest {
 			(!Modifier.isStatic(m.getModifiers()))) {
 				throw new RuntimeException("main method prototype not static and/or void");
 		}
-		Object[] param = { args };
+		Object[] param = { null };
 		m.invoke(o, param);
 		
 		BufferedReader outReader = new BufferedReader(new StringReader(bosOut.toString()));
