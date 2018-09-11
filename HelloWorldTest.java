@@ -8,8 +8,8 @@ public class HelloWorldTest {
 	// adapted from http://gilmation.com/articles/junit-with-standard-and-error-output-in-main-methods/
 	@Test
 	public void testHelloWorldOutput(String[] args) throws Throwable {
-		private static final PrintStream OUT = System.out;
-		private static final PrintStream ERR = System.err;
+		PrintStream OUT = System.out;
+		PrintStream ERR = System.err;
 		
 		ByteArrayOutputStream bosOut = new ByteArrayOutputStream();
 		ByteArrayOutputStream bosErr = new ByteArrayOutputStream();
