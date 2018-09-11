@@ -2,6 +2,10 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
+import java.io.*;
+import java.lang.reflect.*;
+import java.util.*;
+
 public class HelloWorldTest {
 	
 	// Asserts that HelloWorld class main method outputs "Hello, world!"
