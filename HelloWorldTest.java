@@ -24,7 +24,7 @@ public class HelloWorldTest {
 		
 		List<String> result = new ArrayList<String>();
 
-		Class c = c.forName("HelloWorld");
+		Class c = Class.forName("HelloWorld");
 		Object o = c.newInstance();
 		Method m = o.getClass().getMethod("main", (new String[0]).getClass());
 		
