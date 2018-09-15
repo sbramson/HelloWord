@@ -41,11 +41,15 @@ public class HelloWorldTest {
 		String errLine = errReader.readLine();
 		while (outLine != null || errLine != null) {
 			if (outLine != null) {
-				result.add("stdout: " + outLine);
+				StringBuilder sb = new StringBuilder("stdout: ");
+				sb.append(outLine);
+				result.add(sb.toString());
 				outLine = outReader.readLine();
 			}
 			if (errLine != null) {
-				result.add("stderr: " + errLine);
+				StringBuilder sb = new StringBuilder("stderr: ");
+				sb.append(errLine);
+				result.add(sb.toString());
 				errLine = errReader.readLine();
 			}
 		}
@@ -58,6 +62,6 @@ public class HelloWorldTest {
 		bosOut.close();
 		bosErr.close();		
 		
-		assertArrayEquals(new String[]{ "Hello, world!" }, result.toArray(new String[0]));
+		assertArrayEquals(new String[]{ "stdout: Hello, world!" }, result.toArray(new String[0]));
 	}
 }
